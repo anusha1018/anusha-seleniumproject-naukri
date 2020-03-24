@@ -64,8 +64,8 @@ public class recruiter_main {
 	public void login() throws IOException
 	{   
         driver.findElement(By.xpath("//*[@id=\"login_Layer\"]/div")).click();
-		driver.findElement(By.id("eLoginNew")).sendKeys("tejaswini.m481@gmail.com");
-		driver.findElement(By.id("pLogin")).sendKeys("tejaswini@24");
+		driver.findElement(By.id("eLoginNew")).sendKeys("janardhana.selenium3@gmail.com");
+		driver.findElement(By.id("pLogin")).sendKeys("ammuanu@$");
 		driver.findElement(By.xpath("//*[@id=\"lgnFrmNew\"]/div[9]/button")).click();
 	}
 		
