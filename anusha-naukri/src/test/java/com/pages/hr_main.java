@@ -13,7 +13,7 @@ import com.excel.excel_utility;
 
 public class hr_main {
 
-
+		// Used to instantiate the WebDriver object
 		WebDriver driver;
 		
 		public void launchChrome()
