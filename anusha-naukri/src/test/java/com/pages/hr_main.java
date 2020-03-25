@@ -70,7 +70,7 @@ public class hr_main {
 		public void follow() {
 			driver.findElement(By.xpath("//*[@id=\"srp_3887716\"]")).click();
 			driver.findElement(By.xpath("//*[@id=\"emailTxt\"]")).sendKeys("com");
-			driver.findElement(By.xpath("//*[@id=\"pwd1\"]")).sendKeys("tejaswini@24");
+			driver.findElement(By.xpath("//*[@id=\"pwd1\"]")).sendKeys("janardhana.selenium");
 			driver.findElement(By.xpath("//*[@id=\"signInSubmit\"]")).click();
 			driver.findElement(By.xpath("//*[@id=\"srp_971011\"]")).click();
 			driver.findElement(By.xpath("//*[@id=\"srp_3081024\"]")).click();
