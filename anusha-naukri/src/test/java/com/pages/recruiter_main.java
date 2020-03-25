@@ -14,7 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 public class recruiter_main {
 	
 	public static WebDriver driver;
-	
+	//To Launch chrome browser
 	public void launchChrome()
 	{
 		System.setProperty("webdriver.chrome.driver","E:\\eclipse-workspace\\anusha\\src\\test\\resources\\driver\\chromedriver.exe");
@@ -22,6 +22,7 @@ public class recruiter_main {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	}
+	//To Open url in Chrome browser
 	public void url()
 	{
 		driver.get("https://www.naukri.com/");
@@ -61,6 +62,7 @@ public class recruiter_main {
 		else
 			return false;
 	}
+	//To login into the application
 	public void login() throws IOException
 	{   
         driver.findElement(By.xpath("//*[@id=\"login_Layer\"]/div")).click();
@@ -68,7 +70,7 @@ public class recruiter_main {
 		driver.findElement(By.id("pLogin")).sendKeys("ammuanu@$");
 		driver.findElement(By.xpath("//*[@id=\"lgnFrmNew\"]/div[9]/button")).click();
 	}
-		
+		//To access recruiter field
 		public void mouse_actions()
 		{
 			WebElement a1 = driver.findElement(By.xpath("/html/body/div[1]/div/div/ul[1]/li[2]/a/div"));
