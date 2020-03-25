@@ -13,6 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class more_main {
 	static WebDriver driver;
+	//To Launch Chrome Browser
 	public void launchChrome()
 	{
 		System.setProperty("webdriver.chrome.driver","E:\\eclipse-workspace\\anusha\\src\\test\\resources\\driver\\chromedriver.exe");
@@ -21,6 +22,7 @@ public class more_main {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	}
+	//To open url in Chrome Browser
 	public void url()
 	{
 		driver.get("https://www.naukri.com/");
@@ -55,6 +57,7 @@ public class more_main {
 		else
 			return false;
 	}
+	//To login into the Application
 	public void loginn() throws IOException
 	{
 		driver.findElement(By.xpath("//*[@id=\"login_Layer\"]/div")).click();
@@ -64,6 +67,7 @@ public class more_main {
 		driver.findElement(By.id("pLogin")).sendKeys("ammuanu@$");
 		driver.findElement(By.xpath("//*[@id=\"lgnFrmNew\"]/div[9]/button")).click();
 	}
+	//To Access more Field 
 	public void more() throws InterruptedException
 	{
 		WebElement a =driver.findElement(By.xpath("/html/body/div[1]/div/div/ul[1]/li[6]/a/div"));
