@@ -21,7 +21,7 @@ Scenario:
 	And  user can click more and move to any field	
 	
 
-	@tc03_HR
+	  @tc03_HR
 Scenario:	
 	check that the user is able to follow hr
 	
