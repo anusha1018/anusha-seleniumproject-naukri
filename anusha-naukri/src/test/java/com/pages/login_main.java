@@ -17,7 +17,7 @@ package com.pages;
 	public class login_main{
 		static WebDriver driver;
 		excel_utility eu = new excel_utility();
-		
+		//To Launch ChromeBrowser
 		public void launchChrome()
 		{
 			System.setProperty("webdriver.chrome.driver","E:\\eclipse-workspace\\anusha\\src\\test\\resources\\driver\\chromedriver.exe");
@@ -25,6 +25,7 @@ package com.pages;
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		}
+		//To Open Naukri Website
 		public void url()
 		{
 			driver.get("https://www.naukri.com/");
@@ -62,7 +63,7 @@ package com.pages;
 		}
 
 		
-		
+		//To Get Login Details From ExcelUtility
 		public void loginn() throws IOException, InterruptedException
 		{
 			for(int i=1;i<=1;i++)
