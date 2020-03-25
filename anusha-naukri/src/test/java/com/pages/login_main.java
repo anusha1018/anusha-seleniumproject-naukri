@@ -22,8 +22,8 @@ package com.pages;
 		{
 			System.setProperty("webdriver.chrome.driver","E:\\eclipse-workspace\\anusha\\src\\test\\resources\\driver\\chromedriver.exe");
 			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().window().maximize();//To maximize the window
+			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);//To provide waiting time
 		}
 		//To Open Naukri Website
 		public void url()
@@ -77,7 +77,8 @@ package com.pages;
 			
 				
 			}
-			driver.close();
+			
+			driver.close();//To close the browser
 		}
 	}
 
