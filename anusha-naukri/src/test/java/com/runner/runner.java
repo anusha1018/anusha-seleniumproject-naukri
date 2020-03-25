@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 features = "src\\main\\resources\\features\\testcase.feature",
 plugin = {"pretty", "html:reports/cucumber-html-report"},
-tags = {"@tc01_login,@tc02_search,@tc03_more,@tc04_filter,@tc05_search_recruiters,@tc06_field,@tc07_HR"},
+tags = {"@tc01_login,@tc02_more,tc03_HR,@tc04_search_recruiters"},
 glue = {"com.stepdefiniton"},
 monochrome = true
 )
