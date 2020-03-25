@@ -24,6 +24,7 @@ public class hr_main {
 			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		}
+		//To Launch url in Chrome Browser
 		public void url()
 		{
 			driver.get("https://www.naukri.com/");
@@ -58,7 +59,7 @@ public class hr_main {
 			else
 				return false;
 		}
-		
+		//To send login Details 
 		public void login_search() throws IOException
 		{   
 	        driver.findElement(By.xpath("//*[@id=\"login_Layer\"]/div")).click();
@@ -66,7 +67,7 @@ public class hr_main {
 			driver.findElement(By.id("pLogin")).sendKeys("ammuanu@$");
 			driver.findElement(By.xpath("//*[@id=\"lgnFrmNew\"]/div[9]/button")).click();
 		}
-		
+		//To Follow hr 
 		public void follow() {
 			driver.findElement(By.xpath("//*[@id=\"srp_3887716\"]")).click();
 			driver.findElement(By.xpath("//*[@id=\"emailTxt\"]")).sendKeys("com");
