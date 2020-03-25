@@ -19,8 +19,8 @@ public class more_main {
 		System.setProperty("webdriver.chrome.driver","E:\\eclipse-workspace\\anusha\\src\\test\\resources\\driver\\chromedriver.exe");
 		
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.manage().window().maximize();//To maximize the window
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);//To provide waiting time
 	}
 	//To open url in Chrome Browser
 	public void url()
@@ -31,11 +31,11 @@ public class more_main {
 		Assert.assertTrue(closeAllOtherWindows(mainWindow));
 		Assert.assertTrue(windowTitle.contains("Jobs - Recruitment"));
 	}
-		
+	
 	public String getMainWindowHandle(WebDriver driver) {
 		return driver.getWindowHandle();
 	}
-
+	
 	public String getCurrentWindowTitle() {
 		String windowTitle = driver.getTitle();
 		return windowTitle;
