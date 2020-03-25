@@ -19,8 +19,8 @@ public class recruiter_main {
 	{
 		System.setProperty("webdriver.chrome.driver","E:\\eclipse-workspace\\anusha\\src\\test\\resources\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.manage().window().maximize();//To maximize the  window
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);//To provide waiting time
 	}
 	//To Open url in Chrome browser
 	public void url()
