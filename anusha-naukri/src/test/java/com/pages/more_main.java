@@ -12,60 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class more_main {
-	static WebDriver driver;
-	//To Launch Chrome Browser
-	public void launchChrome(String browser)
-	{
-		if(browser.equalsIgnoreCase("chrome"))
-		{
-		System.setProperty("webdriver.chrome.driver","src/resources/driver/chromedriver.exe");
-		driver = new ChromeDriver();
-		}
-		else if(browser.equalsIgnoreCase("firefox"))
-		{
-			System.setProperty("webdriver.gecko.driver","");
-			driver = new FirefoxDriver();
-		}
-		
-		driver.manage().window().maximize();//To maximize the window
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);//To provide waiting time
-	}
-	//To open url in Chrome Browser
-	public void url()
-	{
-		driver.get("https://www.naukri.com/");
-		String windowTitle= getCurrentWindowTitle();
-		String mainWindow = getMainWindowHandle(driver);
-		Assert.assertTrue(closeAllOtherWindows(mainWindow));
-		Assert.assertTrue(windowTitle.contains("Jobs - Recruitment"));
-	}
+public class more_main extends login_main{
 	
-	public String getMainWindowHandle(WebDriver driver) {
-		return driver.getWindowHandle();
-	}
-	
-	public String getCurrentWindowTitle() {
-		String windowTitle = driver.getTitle();
-		return windowTitle;
-	}
-	
-	//To close all the other windows except the main window.
-	public static boolean closeAllOtherWindows(String openWindowHandle) {
-		Set<String> allWindowHandles = driver.getWindowHandles();
-		for (String currentWindowHandle : allWindowHandles) {
-			if (!currentWindowHandle.equals(openWindowHandle)) {
-				driver.switchTo().window(currentWindowHandle);
-				driver.close();
-			}
-		}
-		
-		driver.switchTo().window(openWindowHandle);
-		if (driver.getWindowHandles().size() == 1)
-			return true;
-		else
-			return false;
-	}
 	//To login into the Application
 	public void loginn() throws IOException
 	{
@@ -78,12 +26,13 @@ public class more_main {
 	}
 	//To Access more Field 
 	public void more() throws InterruptedException
-	{
+	{ 
+		Thread.sleep(5000);
 		WebElement a =driver.findElement(By.xpath("/html/body/div[1]/div/div/ul[1]/li[6]/a/div"));
 		WebElement b =driver.findElement(By.xpath("//a[contains(text(),'MBA')]"));
 		Actions act = new Actions(driver);
 		act.moveToElement(a);
-		act.moveToElement(b).click().build().perform();
+		act.moveToElement(b).click(b).build().perform();
 		Thread.sleep(8000);
 		driver.close();
 	}

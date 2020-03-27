@@ -10,10 +10,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-features ="/anusha-naukri/src/main/resources/features/anunaukri.feature",
-plugin = {"pretty", "html:reports/cucumber-html-report","com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
-tags = {"@tc01_login,@tc02_more,@tc03_HR,@tc04_search_recruiters"},
-glue = {"com.stepdefiniton"},
+features ="src/main/resources/features/anunaukri.feature",
+plugin = {"pretty", "html:reports/cucumber-html-report","json:reports/cucumber-html-report/jsonreport","com.cucumber.listener.ExtentCucumberFormatter:reports/Extentreports/Extentreport.html"},
+//tags = {"@tc01_login"},
+glue = {"com.stepdefination"},
 monochrome = true
 )
 
@@ -21,6 +21,13 @@ public class runner {
 	@AfterClass
 	public static void writeExtentReport() {
 	Reporter.loadXMLConfig("src/main/resources/extent-config.xml");
+	Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
+    Reporter.setSystemInfo("Time Zone", System.getProperty("user.timezone"));
+    Reporter.setSystemInfo("Machine", "Windows 10" + "64 Bit");
+    Reporter.setSystemInfo("Selenium", "3.141.59");
+    Reporter.setSystemInfo("Maven", "4.0.0");
+    Reporter.setSystemInfo("Java Version", "1.8.0_131");
+
 	}
 	
 }

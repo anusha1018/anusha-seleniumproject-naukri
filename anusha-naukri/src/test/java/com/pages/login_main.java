@@ -76,18 +76,18 @@ import org.openqa.selenium.interactions.Actions;
 		//To Get Login Details From ExcelUtility
 		public void loginn() throws IOException, InterruptedException
 		{
-			for(int i=1;i<=1;i++)
-			{
+			
 				
 			driver.findElement(By.xpath("//*[@id=\"login_Layer\"]/div")).click();
-			driver.findElement(By.id("eLoginNew")).sendKeys(eu.excel_email(i));
-			driver.findElement(By.id("pLogin")).sendKeys(eu.excel_password(i));
+			 Thread.sleep(4000);
+			driver.findElement(By.id("eLoginNew")).sendKeys(eu.excel_email(1));
+			driver.findElement(By.id("pLogin")).sendKeys(eu.excel_password(1));
 		    driver.findElement(By.xpath("//*[@id=\"lgnFrmNew\"]/div[9]/button")).click();  
 		    Thread.sleep(4000);
 			
 				
-			}
 			
+	
 			driver.close();//To close the browser
 		}
 	}

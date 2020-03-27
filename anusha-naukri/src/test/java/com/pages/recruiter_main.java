@@ -12,67 +12,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class recruiter_main {
+public class recruiter_main extends login_main{
 	
-	public static WebDriver driver;
-	//To Launch chrome browser
-	public void launchChrome(String browser)
-	{
-		if(browser.equalsIgnoreCase("chrome"))
-		{
-		System.setProperty("webdriver.chrome.driver","src/resources/driver/chromedriver.exe");
-		driver = new ChromeDriver();
-		}
-		else if(browser.equalsIgnoreCase("firefox"))
-		{
-			System.setProperty("webdriver.gecko.driver","");
-			driver = new FirefoxDriver();
-		}
-		
-		driver.manage().window().maximize();//To maximize the  window
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);//To provide waiting time
-	}
-	//To Open url in Chrome browser
-	public void url()
-	{
-		driver.get("https://www.naukri.com/");
-		String windowTitle= getCurrentWindowTitle();
-		String mainWindow = getMainWindowHandle(driver);
-		Assert.assertTrue(closeAllOtherWindows(mainWindow));
-		Assert.assertTrue(windowTitle.contains("Jobs - Recruitment"));
-	}
-		
-	public String getMainWindowHandle(WebDriver driver)
-	{
-		return driver.getWindowHandle();
-	}
-
-	public String getCurrentWindowTitle()
-	{
-		String windowTitle = driver.getTitle();
-		return windowTitle;
-	}
-	
-	//To close all the other windows except the main window.
-	public static boolean closeAllOtherWindows(String openWindowHandle) 
-	{
-		Set<String> allWindowHandles = driver.getWindowHandles();
-		for (String currentWindowHandle : allWindowHandles) 
-		{
-			if (!currentWindowHandle.equals(openWindowHandle)) 
-			{
-				driver.switchTo().window(currentWindowHandle);
-				driver.close();
-			}
-		}
-		
-		driver.switchTo().window(openWindowHandle);
-		if (driver.getWindowHandles().size() == 1)
-			return true;
-		else
-			return false;
-	}
-	//To login into the application
+		//To login into the application
 	public void login() throws IOException
 	{   
         driver.findElement(By.xpath("//*[@id=\"login_Layer\"]/div")).click();

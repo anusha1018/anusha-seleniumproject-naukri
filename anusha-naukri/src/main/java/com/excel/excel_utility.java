@@ -12,12 +12,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class excel_utility {
 	public  String excel_email(int i) throws IOException {
 		  
-		  FileInputStream fil = new FileInputStream(new File("E:\\eclipse-workspace\\anusha\\src\\test\\resources\\testdata\\naukri.xlsx"));
+		  FileInputStream fil = new FileInputStream(new File("src/resources/testdata/test.xlsx"));
 		  XSSFWorkbook workbook = new XSSFWorkbook(fil);
 		  XSSFSheet sheet=workbook.getSheet("Sheet1");
 		  
 		    
-			  XSSFRow row =sheet.getRow(i);
+			  XSSFRow row =sheet.getRow(1);
 			  XSSFCell cell=row.getCell(0);
 			  String em=cell.getStringCellValue();
 			        
@@ -25,12 +25,12 @@ public class excel_utility {
 }
 	public  String excel_password(int i) throws IOException {
 		  
-		  FileInputStream fil = new FileInputStream(new File("E:\\eclipse-workspace\\anusha\\src\\test\\resources\\testdata\\naukri.xlsx"));
+		  FileInputStream fil = new FileInputStream(new File("src/resources/testdata/test.xlsx"));
 		  XSSFWorkbook workbook = new XSSFWorkbook(fil);
 		  XSSFSheet sheet=workbook.getSheet("Sheet1");
 		  
 		  
-			  XSSFRow row =sheet.getRow(i);
+			  XSSFRow row =sheet.getRow(1);
 			  XSSFCell cell1=row.getCell(1);
 			  String pwd=cell1.getStringCellValue();
     
