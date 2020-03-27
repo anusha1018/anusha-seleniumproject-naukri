@@ -12,7 +12,7 @@ import cucumber.api.java.en.When;
 public class recruiter_step extends recruiter_main {
 	@Given("^user launched the chrome browser for search_recruiters scenario$")
 	public void user_launched_the_chrome_browser_for_search_recruiters_scenario()  {
-		launchChrome();
+		launchChrome("chrome");
 	}
 
 	@When("^user launches naukri homepage$")

@@ -12,7 +12,7 @@ import cucumber.api.java.en.When;
 public class hr_step extends hr_main{
 	@Given("^user  launchs the chrome browser to follow hr$")
 	public void user_launchs_the_chrome_browser_to_follow_hr() {
-		launchChrome();
+		launchChrome("chrome");
 	}
 
 	@When("^user opens the naukri homepage for hr$")

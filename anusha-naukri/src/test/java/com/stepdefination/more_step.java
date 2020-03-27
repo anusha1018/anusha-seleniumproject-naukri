@@ -12,7 +12,7 @@ public class more_step {
 	more_main mo = new more_main();
 	@Given("^user can launched the chrome browser$")
 	public void user_can_launched_the_chrome_browser() throws Throwable {
-	   mo.launchChrome();
+	   mo.launchChrome("chrome");
 	}
 
 	@When("^user opens the naukri homepage$")

@@ -8,10 +8,13 @@ import cucumber.api.java.en.When;
 
 public class login_step extends login_main {
 	
-	@Given("^user launched the chrome browser$")
-	public void user_launched_the_chrome_browser() throws Throwable {
-		launchChrome();
-	}
+	
+
+@Given("^user launched the chrome browser$")
+public void user_launched_the_chrome_browser() throws Throwable 
+{
+    launchChrome("chrome");
+}
 
 	@When("^user opens naukri homepage$")
 	public void user_opens_naukri_homepage() throws Throwable {

@@ -10,7 +10,8 @@ package com.pages;
 	import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.chrome.ChromeDriver;
-	import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 
 	import com.excel.excel_utility;
 
@@ -18,10 +19,19 @@ package com.pages;
 		static WebDriver driver;
 		excel_utility eu = new excel_utility();
 		//To Launch ChromeBrowser
-		public void launchChrome()
+		public void launchChrome(String browser)
 		{
-			System.setProperty("webdriver.chrome.driver","E:\\eclipse-workspace\\anusha\\src\\test\\resources\\driver\\chromedriver.exe");
+			if(browser.equalsIgnoreCase("chrome"))
+			{
+			System.setProperty("webdriver.chrome.driver","src/resources/driver/chromedriver.exe");
 			driver = new ChromeDriver();
+			}
+			else if(browser.equalsIgnoreCase("firefox"))
+			{
+				System.setProperty("webdriver.gecko.driver","");
+				driver = new FirefoxDriver();
+			}
+			
 			driver.manage().window().maximize();//To maximize the window
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);//To provide waiting time
 		}

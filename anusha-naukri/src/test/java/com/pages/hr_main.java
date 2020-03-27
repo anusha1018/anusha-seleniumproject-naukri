@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.excel.excel_utility;
 
@@ -16,10 +17,19 @@ public class hr_main {
 		// Used to instantiate the WebDriver object
 		WebDriver driver;
 		
-		public void launchChrome()
+		public void launchChrome(String browser)
 		{
-			System.setProperty("webdriver.chrome.driver","E:\\eclipse-workspace\\anusha\\src\\test\\resources\\driver\\chromedriver.exe");
+			if(browser.equalsIgnoreCase("chrome"))
+			{
+			System.setProperty("webdriver.chrome.driver","src/resources/driver/chromedriver.exe");
 			driver = new ChromeDriver();
+			}
+			else if(browser.equalsIgnoreCase("firefox"))
+			{
+				System.setProperty("webdriver.gecko.driver","");
+				driver = new FirefoxDriver();
+			}
+			
 			driver.manage().window().maximize();//To maximize the window
 			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);//To provide time to pageloading
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);//To provide waiting time
